@@ -4,7 +4,7 @@
 <%@ page session="false"%>
 <html>
 <head>
-<title>Person Page</title>
+<title>Task Page</title>
 <style type="text/css">
 body {
 	font: normal .80em 'trebuchet ms', arial, sans-serif;
@@ -102,8 +102,7 @@ h1,h2,h3,h4,h5,h6 {
 			<div id="logo_text">
 
 				<h1 style="padding-left: 10%;">
-					<a href="#">Employee<span class="logo_colour">
-							Database </span></a>
+					<a href="#">Task<span class="logo_colour"> Management </span></a>
 				</h1>
 			</div>
 		</div>
@@ -111,13 +110,18 @@ h1,h2,h3,h4,h5,h6 {
 </div>
 </head>
 <body align="center">
-	<h1>Add a Employee</h1>
+<h1 align="left">Welcome ${param.message}</h1>
+<form action="http://localhost:8080/TaskManagement/taskadd">
+    <input type="submit" value="Add Task" />
+</form>
+<!-- 
+	<h1>Add a Task</h1>
 
-	<c:url var="addAction" value="/person/add"></c:url>
+	<c:url var="addAction" value="/task/add"></c:url>
 
-	<form:form action="${addAction}" commandName="person">
+	<form:form action="${addAction}" commandName="task">
 		<table align="center">
-			<c:if test="${!empty person.name}">
+			<c:if test="${!empty task.name}">
 				<tr>
 					<td><form:label path="id">
 							<spring:message text="ID" />
@@ -133,45 +137,74 @@ h1,h2,h3,h4,h5,h6 {
 				<td><form:input path="name" /></td>
 			</tr>
 			<tr>
-				<td><form:label path="department">
-						<spring:message text="Department" />
+				<td><form:label path="date">
+						<spring:message text="Date" />
 					</form:label></td>
-				<td><form:input path="department" /></td>
+				<td><form:input type="date" min="2000-01-02" path="date" /></td>
+			</tr>
+			<tr>
+				<td><form:label path="stime">
+						<spring:message text="Start Time" />
+					</form:label></td>
+				<td><form:input type="time" path="stime" /></td>
+			</tr>
+			<tr>
+				<td><form:label path="etime">
+						<spring:message text="End Time" />
+					</form:label></td>
+				<td><form:input type="time" path="etime" /></td>
 			</tr>
 
 			<tr>
-				<td colspan="2"><c:if test="${!empty person.name}">
+				<td><form:label path="objtask">
+						<spring:message text="Objetive of Task" />
+					</form:label></td>
+				<td><form:input path="objtask" /></td>
+			</tr>
+
+			<tr>
+				<td colspan="2"><c:if test="${!empty task.name}">
 						<br>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				<input type="submit" value="<spring:message text="Edit Employee"/>" />
-					</c:if> <c:if test="${empty person.name}">
+				<input type="submit" value="<spring:message text="Edit Task"/>" />
+					</c:if> <c:if test="${empty task.name}">
 						<br>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				<input type="submit" value="<spring:message text="Add Employee"/>" />
+				<input type="submit" value="<spring:message text="Add Task"/>" />
 					</c:if></td>
 			</tr>
 		</table>
 	</form:form>
-	<br>
-	<h3>Employees List</h3>
-	<c:if test="${!empty listPersons}">
+	<br> -->
+	<h3>Task List</h3>
+	<c:if test="${!empty listTasks}">
 		<table class="tg" align="center">
 			<tr>
-				<th width="80">Employee ID</th>
-				<th width="120">Employee Name</th>
-				<th width="120">Employee Department</th>
+				<th width="80">Task ID</th>
+				<th width="120">Task Name</th>
+
+				<th width="120">Task Date</th>
+				<th width="120">Task Start Time</th>
+				<th width="120">Task End Time</th>
+				<th width="120">Task Objective</th>
+				<th width="120">Task Status</th>
 				<th width="60">Edit</th>
 				<th width="60">Delete</th>
 			</tr>
-			<c:forEach items="${listPersons}" var="person">
+			<c:forEach items="${listTasks}" var="task">
 				<tr>
-					<td>${person.id}</td>
-					<td>${person.name}</td>
-					<td>${person.department}</td>
-					<td><a href="<c:url value='/edit/${person.id}' />">Edit</a></td>
-					<td><a href="<c:url value='/remove/${person.id}' />">Delete</a></td>
+					<td>${task.id}</td>
+					<td>${task.name}</td>
+
+					<td>${task.date}</td>
+					<td>${task.stime}</td>
+					<td>${task.etime}</td>
+					<td>${task.objtask}</td>
+					<td>${task.tstatus}</td>
+					<td><a href="<c:url value='/edit/${task.id}' />">Edit</a></td>
+					<td><a href="<c:url value='/remove/${task.id}' />">Delete</a></td>
 				</tr>
 			</c:forEach>
 		</table>
