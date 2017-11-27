@@ -194,6 +194,21 @@ h1,h2,h3,h4,h5,h6 {
 				<th width="60">Delete</th>
 			</tr>
 			<c:forEach items="${listTasks}" var="task">
+				<c:if test="${task.tstatus=='Completed'}">
+									<tr>
+					<td>${task.id}</td>
+					<td>${task.name}</td>
+
+					<td>${task.date}</td>
+					<td>${task.stime}</td>
+					<td>${task.etime}</td>
+					<td>${task.objtask}</td>
+					<td>${task.tstatus}</td>
+					<td>Edit</td>
+					<td>Delete</td>
+				</tr>
+					</c:if>
+				<c:if test="${task.tstatus=='New'}">
 				<tr>
 					<td>${task.id}</td>
 					<td>${task.name}</td>
@@ -206,6 +221,21 @@ h1,h2,h3,h4,h5,h6 {
 					<td><a href="<c:url value='/edit/${task.id}' />">Edit</a></td>
 					<td><a href="<c:url value='/remove/${task.id}' />">Delete</a></td>
 				</tr>
+					</c:if>
+				<c:if test="${task.tstatus=='Started'}">
+				<tr>
+					<td>${task.id}</td>
+					<td>${task.name}</td>
+
+					<td>${task.date}</td>
+					<td>${task.stime}</td>
+					<td>${task.etime}</td>
+					<td>${task.objtask}</td>
+					<td>${task.tstatus}</td>
+					<td><a href="<c:url value='/edit/${task.id}' />">Edit</a></td>
+					<td><a href="<c:url value='/remove/${task.id}' />">Delete</a></td>
+				</tr>
+					</c:if>
 			</c:forEach>
 		</table>
 	</c:if>
