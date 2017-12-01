@@ -37,15 +37,13 @@ Requirements
 #### Login
 ![Optional Text](https://github.com/srinivasaprabu/TaskManagement/blob/master/src/main/resources/images/Login.jpg)
 
+#### Login Validation
+![Optional Text](https://github.com/srinivasaprabu/TaskManagement/blob/master/src/main/resources/images/Login_Field_Validation.jpg)
+
+#### Read Task
+![Optional Text](https://github.com/srinivasaprabu/TaskManagement/blob/master/src/main/resources/images/Validated_Task_Status.jpg)
 
 #### Creating Task
 ![Optional Text](https://github.com/srinivasaprabu/TaskManagement/blob/master/src/main/resources/images/Add_task.jpg)
-
-
-#### Read updated Task
-![Optional Text](https://github.com/srinivasaprabu/TaskManagement/blob/master/src/main/resources/images/Validated_Task_Status.jpg)
-
-#### Login Validation
-![Optional Text](https://github.com/srinivasaprabu/TaskManagement/blob/master/src/main/resources/images/Login_Field_Validation.jpg)
 
 
