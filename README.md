@@ -51,7 +51,7 @@ Requirements
 
 
 #### Read updated Task
-![Optional Text](https://github.com/srinivasaprabu/TaskManagement/blob/master/src/main/resources/images/Updated_task.jpg)
+![Optional Text](https://github.com/srinivasaprabu/TaskManagement/blob/master/src/main/resources/images/Validated_Task_Status.jpg)
 
 
 #### Delete Task
