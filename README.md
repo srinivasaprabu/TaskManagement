@@ -42,20 +42,8 @@ Requirements
 ![Optional Text](https://github.com/srinivasaprabu/TaskManagement/blob/master/src/main/resources/images/Add_task.jpg)
 
 
-#### Read Task
-![Optional Text](https://github.com/srinivasaprabu/TaskManagement/blob/master/src/main/resources/images/Task_detail.jpg)
-
-
-#### Update Task
-![Optional Text](https://github.com/srinivasaprabu/TaskManagement/blob/master/src/main/resources/images/Update.jpg)
-
-
 #### Read updated Task
 ![Optional Text](https://github.com/srinivasaprabu/TaskManagement/blob/master/src/main/resources/images/Validated_Task_Status.jpg)
-
-
-#### Delete Task
-![Optional Text](https://github.com/srinivasaprabu/TaskManagement/blob/master/src/main/resources/images/Deleted_task.jpg)
 
 #### Login Validation
 ![Optional Text](https://github.com/srinivasaprabu/TaskManagement/blob/master/src/main/resources/images/Login_Field_Validation.jpg)
